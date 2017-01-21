@@ -1,4 +1,4 @@
-package com.adapps.shoutbox;
+package com.teamproject.shoutbox;
 
 
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.adapps.shoutbox;
+package com.teamproject.shoutbox;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,8 +17,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -30,8 +28,10 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.github.amlcurran.showcaseview.ShowcaseView;
 import com.github.amlcurran.showcaseview.targets.Target;
 import com.github.amlcurran.showcaseview.targets.ViewTarget;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.appinvite.AppInvite;
-import com.google.android.gms.appinvite.AppInviteApi;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.common.ConnectionResult;
@@ -49,6 +49,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import shortroid.com.shortroid.ShortRoidPreferences.ShortRoidPreferences;
 
 public class MainActivity extends AppCompatActivity
         implements GoogleApiClient.OnConnectionFailedListener {
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity
     private FirebaseRemoteConfig mFirebaseRemoteConfig;
     public TextView signout;
     public TextView invite;
+    private AdView mAdView; //for Ads
+
 
     // Firebase instance variables
     private DatabaseReference mFirebaseDatabaseReference;
@@ -105,7 +108,22 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(R.layout.activity_main);
 
-        Target listObjetivo = new ViewTarget(R.id.invite, this);
+        //Ads initialize
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-9985159092710073~2935916744");
+
+        //Load the ads
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .tagForChildDirectedTreatment(true)
+                .build();
+        mAdView.loadAd(adRequest);
+
+       Target listObjetivo = new ViewTarget(R.id.invite, this);
+
+        //SharedPreferences to show ShowCaseView a single time
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if(!prefs.getBoolean("firstime", false)) {
+            // run your one time code
 
             new ShowcaseView.Builder(this, true)
                     .setTarget(listObjetivo)
@@ -114,9 +132,19 @@ public class MainActivity extends AppCompatActivity
                     .setStyle(4)
                     .build();
 
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("firstime", true);
+            editor.commit();
+
+
+        }
+
+
 
 
        /* Target se = new ViewTarget(R.id.messageEditText, this);
+
+
 
         new ShowcaseView.Builder(this, false)
                 .setTarget(se)
@@ -128,7 +156,7 @@ public class MainActivity extends AppCompatActivity
         // Set default username is anonymous.
         mUsername = ANONYMOUS;
 
-        invite = (TextView)findViewById(R.id.invite);
+      invite = (TextView)findViewById(R.id.invite);
 
         signout = (TextView)findViewById(R.id.signout);
 
@@ -347,6 +375,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onStart() {
+
         super.onStart();
         // Check if user is signed in.
         // TODO: Add code to check if user is signed in.
@@ -354,16 +383,25 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
         super.onPause();
     }
 
     @Override
     public void onResume() {
+        if (mAdView != null) {
+            mAdView.resume();
+        }
         super.onResume();
     }
 
     @Override
     public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
         super.onDestroy();
     }
 

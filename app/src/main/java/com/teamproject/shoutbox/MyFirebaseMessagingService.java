@@ -1,4 +1,4 @@
-package com.adapps.shoutbox;
+package com.teamproject.shoutbox;
 
 /**
  * Created by 1405006 on 12/21/2016.

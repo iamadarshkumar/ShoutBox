@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.adapps.shoutbox">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.teamproject.shoutbox">
 
     <application
         android:allowBackup="true"
@@ -9,21 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
-            android:name=".MyFirebaseMessagingService"
+            android:name="com.teamproject.shoutbox.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
         <service
-            android:name=".MyFirebaseInstanceIdService"
+            android:name="com.teamproject.shoutbox.MyFirebaseInstanceIdService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".SplashActivity"
+        <activity android:name="com.teamproject.shoutbox.SplashActivity"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,9 +33,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"
+        <activity android:name="com.teamproject.shoutbox.MainActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".SignInActivity"
+        <activity android:name="com.teamproject.shoutbox.SignInActivity"
             android:screenOrientation="portrait"/>
 
 

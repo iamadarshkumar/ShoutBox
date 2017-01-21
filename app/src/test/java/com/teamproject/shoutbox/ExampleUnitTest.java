@@ -1,4 +1,4 @@
-package com.adapps.shoutbox;
+package com.teamproject.shoutbox;
 
 import org.junit.Test;
 
