@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="4dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:layout_weight="0.10"
+            android:id="@+id/signout" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/total"
+            android:layout_weight="0.70">
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/iconweb"
+                android:id="@+id/toolbar_title" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:textSize="23sp"
+                android:text="Shoutbox"
+                android:textColor="#ffffff"
+                android:id="@+id/shoutShare" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/invite"
+            android:text="Invite"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.20"/>
+
+    </LinearLayout>
+</android.support.v7.widget.Toolbar>

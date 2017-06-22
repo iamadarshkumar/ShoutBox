@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "781843385463",
+    "firebase_url": "https://shoutbox-ab81c.firebaseio.com",
+    "project_id": "shoutbox-ab81c",
+    "storage_bucket": "shoutbox-ab81c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781843385463:android:41f6c5dee9dd4324",
+        "android_client_info": {
+          "package_name": "com.adapps.shoutbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781843385463-38t2tu542rp4u7dar5pkjnrtukhpkmcn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adapps.shoutbox",
+            "certificate_hash": "5713E8D445843A0E51712D92954D6BC4A2CC542B"
+          }
+        },
+        {
+          "client_id": "781843385463-tlehv4p5i8441g181sbcabm13eof5th1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJTI2_ZKg_tYUE8L_UaZZLwgBN7pLEXp8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781843385463-tlehv4p5i8441g181sbcabm13eof5th1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

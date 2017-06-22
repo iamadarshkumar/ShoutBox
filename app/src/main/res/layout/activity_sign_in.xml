@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sign_in_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_gravity="center"/>
+
+    <com.hanks.htextview.HTextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/sign_in"
+        android:gravity="center"
+        android:textColor="#26366b"
+        android:textSize="45px"
+        htext:animateType="typer"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dialog"
+        android:gravity="center"
+        android:layout_marginTop="200dp"
+        android:text="Why do I need to sign in?" />
+
+
+</FrameLayout>

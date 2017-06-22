@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ShoutBox</string>
+    <string name="welcome_msg">Welcome!</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="contacts_permission_rationale">Access to account information is required to sign in.</string>
+    <string name="invite_menu_label">Invite</string>
+    <string name="invitation_message">Join me on ShoutBox now : https://play.google.com/store/apps/details?id=com.teamproject.shoutbox</string>
+    <string name="invitation_cta">Download Now</string>
+    <string name="invitation_title">ShoutBox Invite</string>
+    <string name="sign_in">Sign In to get Involved.</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="fresh_config">Fresh Config</string>
+    <string name="cause_crash">Cause Crash</string>
+    <string name="banner_ad_unit_id">ca-app-pub-9985159092710073/8842849544</string>
+</resources>
