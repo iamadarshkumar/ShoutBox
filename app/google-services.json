@@ -19,7 +19,23 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.teamproject.shoutbox",
-            "certificate_hash": "5713E8D445843A0E51712D92954D6BC4A2CC542B"
+            "certificate_hash": "5713e8d445843a0e51712d92954d6bc4a2cc542b"
+          }
+        },
+        {
+          "client_id": "1080933803779-tn4ih6758b5lsnuirq7orb3fi39f15an.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamproject.shoutbox",
+            "certificate_hash": "39a20a185a09d25ed98779644f1d43e0d2b6cc1b"
+          }
+        },
+        {
+          "client_id": "1080933803779-34kef5nlculn0ghe2gk8fl1rnsgnkrll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teamproject.shoutbox",
+            "certificate_hash": "425209c25837b594fd19f1dd7294009b44a1b0c6"
           }
         },
         {

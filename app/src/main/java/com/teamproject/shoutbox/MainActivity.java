@@ -20,9 +20,11 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity
     private LinearLayoutManager mLinearLayoutManager;
     private ProgressBar mProgressBar;
     private EditText mMessageEditText;
+    private FloatingActionButton privacyPolicyButton;
 
 
     @Override
@@ -162,6 +165,9 @@ public class MainActivity extends AppCompatActivity
 
         }
 
+        Toast.makeText(getApplicationContext(), "Touch the lock icon for our privacy policy",
+                Toast.LENGTH_SHORT).show();
+
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         // Set default username to anonymous.
         mUsername = ANONYMOUS;
@@ -194,6 +200,16 @@ public class MainActivity extends AppCompatActivity
                     }
                 }
         );
+        //Initaialise privacy policy button
+        privacyPolicyButton = (FloatingActionButton) findViewById(R.id.privacyPolicyButton);
+        privacyPolicyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://docs.google.com/document/d/1pEkK7fmB0RAo7ak-J1vZUYC0MCT8AvYxSid6Hi8X_94/edit?usp=sharing"));
+                startActivity(intent);
+            }
+        });
 
         // Initialize Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
